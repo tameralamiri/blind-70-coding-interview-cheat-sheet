@@ -1,5 +1,4 @@
-# blind-70-coding-interview-cheat-sheet
-The Coding Patterns:
+# Blind75 - Coding Patterns:
 
 ## 1. Two Pointers
 ### Explanation:

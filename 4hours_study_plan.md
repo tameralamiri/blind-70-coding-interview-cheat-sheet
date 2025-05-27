@@ -11,8 +11,8 @@
     * Walk through starter code.
     * Quick problem: "Two Sum II - Input Array Is Sorted"
 * 15 min: Study Sliding Window pattern.
-* Walk through starter code.
-* Quick problem: "Longest Substring Without Repeating Characters"
+    * Walk through starter code.
+    * Quick problem: "Longest Substring Without Repeating Characters"
 * 20 min: Study Fast & Slow Pointers pattern.
     * Walk through starter code.
     * Quick problem: "Linked List Cycle"
