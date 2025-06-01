@@ -53,3 +53,10 @@
 * Use a timer for each section — keep it strict.
 * After the 4 hours, do a 5-minute mental recap of all patterns you reviewed.
 
+# Bonus Tips for Solving Coding Problems:
+Follow the engineering method:
+1. Explore
+2. BrainStorm
+3. Plan
+4. Implement
+5. Verify
