@@ -162,6 +162,61 @@ items.sort(key=lambda x: x.priority, reverse=True)
 idx = (start + i) % n
 ```
 
+### Matrix Traversals:
+1. Spiral Order Traversal (Clockwise)
+```python
+# Spiral order traversal of a matrix
+def spiralOrder(matrix):
+    if not matrix or not matrix[0]:
+        return []
+    res = []
+    top, bottom = 0, len(matrix) - 1
+    left, right = 0, len(matrix[0]) - 1
+
+    while top <= bottom and left <= right:
+        # Traverse from Left to Right
+        for col in range(left, right + 1):
+            res.append(matrix[top][col])
+        top += 1
+
+        # Traverse Downwards
+        for row in range(top, bottom + 1):
+            res.append(matrix[row][right])
+        right -= 1
+
+        if top <= bottom:
+            # Traverse from Right to Left
+            for col in range(right, left - 1, -1):
+                res.append(matrix[bottom][col])
+            bottom -= 1
+
+        if left <= right:
+            # Traverse Upwards
+            for row in range(bottom, top - 1, -1):
+                res.append(matrix[row][left])
+            left += 1
+
+    return res
+```
+2. Zigzag (Snake) Order Traversal (Row-wise)
+```python
+# Zigzag (snake) order traversal of a matrix
+def zigzagOrder(matrix):
+    if not matrix or not matrix[0]:
+        return []
+    res = []
+    rows = len(matrix)
+    for i in range(rows):
+        if i % 2 == 0:
+            # Left to right
+            res.extend(matrix[i])
+        else:
+            # Right to left
+            res.extend(matrix[i][::-1])
+    return res
+```
+
+
 ---
 
 ## 🎯 Question-Specific Strategies
