@@ -42,6 +42,80 @@ We can use a stack to store characters. Iterate through the string by index. For
 Hint 3
 In a valid parenthesis expression, every opening bracket must have a corresponding closing bracket. The stack is used to process the valid string, and it should be empty after the entire process. This ensures that there is a valid substring between each opening and closing bracket.
 '''
+
+# The Engineering Method:
+#################################################
+# 1. Explore
+# Understand the Problem:
+
+# Input: A string s with only '(', ')', '{', '}', '[' and ']'.
+# Output: Return True if the string is a valid parentheses sequence, False otherwise.
+# Examples:
+
+# "[]" → True
+# "([{}])" → True
+# "[(])" → False
+# Constraints:
+
+# 1 ≤ s.length ≤ 1000
+#################################################
+# 2. BrainStorm
+# Naive Approach:
+
+# Remove pairs of valid brackets until no more can be removed.
+# If the string is empty at the end, it's valid.
+# Downside: O(n²) time.
+# Better Approach:
+
+# Use a stack:
+# Push opening brackets onto the stack.
+# For closing brackets, check if the top of the stack is the matching opening bracket.
+# If not, return False.
+# At the end, the stack should be empty.
+# Why Stack?
+
+# Stack helps track the most recent opening bracket, matching the required closing order.
+#################################################
+# 3. Plan
+# Algorithm:
+
+# Create a mapping of closing to opening brackets.
+# Initialize an empty stack.
+# Iterate through each character in the string:
+# If it's an opening bracket, push to stack.
+# If it's a closing bracket:
+# If stack is empty or top of stack isn't the matching opening bracket, return False.
+# Else, pop the stack.
+# After iteration, if stack is empty, return True; else, False.
+#################################################
+# 4. Implement
+
 class Solution:
-    def isValid(self, s: str) -> bool:
-        
+    def is_valid(self, s: str) -> bool:
+        closing_brackets = {'}': '{', ")" : "(", "]": "["}
+        stack = []
+        for char in s:
+            if char in closing_brackets.values():
+                stack.append(char)
+            elif char in closing_brackets:
+                if not stack or stack[-1] != closing_brackets[char]:
+                    return False
+                stack.pop()
+        return not stack
+
+#################################################
+# 5. Verify
+sol = Solution()
+assert sol.is_valid("[]") == True
+assert sol.is_valid("([{}])") == True
+assert sol.is_valid("[(])") == False
+assert sol.is_valid("([)]") == False
+assert sol.is_valid("{[]}") == True
+assert sol.is_valid("(") == False
+assert sol.is_valid("") == True
+
+# Edge Cases:
+
+# Single opening or closing bracket → False
+# Empty string → True
+# Nested and interleaved brackets → check correctness

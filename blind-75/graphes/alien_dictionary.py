@@ -52,6 +52,7 @@ We can use Topological Sort to ensure every node appears after its predecessor. 
 Hint 4
 When we visit a node and its children and don't find a cycle, we mark the node as False in the map and append it to the result, treating this as a post-order traversal. If we find a cycle, we return an empty string; otherwise, we return the result list.
 '''
+from typing import List
 class Solution:
-    def foreignDictionary(self, words: List[str]) -> str:
-        
+    def foreign_dictionary(self, words: List[str]) -> str:
+        pass
