@@ -62,6 +62,7 @@ def matrix_template(matrix):
 4. **Transpose Matrix** - LeetCode 867
 
 **Medium (High Priority)**
+
 5. **Rotate Image** - LeetCode 48
 6. **Word Search** - LeetCode 79
 7. **Number of Islands** - LeetCode 200
@@ -71,6 +72,7 @@ def matrix_template(matrix):
 11. **Game of Life** - LeetCode 289
 
 **Medium-Hard (Capital One Favorites)**
+
 12. **Longest Increasing Path in Matrix** - LeetCode 329
 13. **Surrounded Regions** - LeetCode 130
 14. **Pacific Atlantic Water Flow** - LeetCode 417
@@ -271,6 +273,12 @@ def max_fish_caught(fish, baits):
                 break
     
     return caught_count
+
+fish = [10, 5, 7, 3, 1]
+baits = [6, 4, 2]
+max_use = 3
+
+assert get_max_fish(fish, baits, max_use) == 4
 ```
 
 **Time Complexity**: O(B × F) where B = baits, F = fish
@@ -327,6 +335,10 @@ def find_leftmost_free_block(memory, size):
         if all(memory[j] == 0 for j in range(i, i + size)):
             return i
     return -1
+
+memory = [0, 0, 1, 0, 0, 0]
+queries = [["alloc", 2], ["erase", 0], ["alloc", 3]]
+expected = [0, 2, 3]  # alloc at 0, erase 2 bytes, alloc 
 ```
 
 ---
@@ -358,6 +370,10 @@ def solve_array_queries(a, b, queries):
             results.append(count)
     
     return results
+a = [1, 2, 3]
+b = [4, 5, 6]
+queries = [[0, 1, 3], [1, 8], [0, 0, 2], [1, 8]]
+expected = [1, 2]
 ```
 
 ---
