@@ -174,7 +174,34 @@ def shortest_path_with_obstacles(warehouse):
     
     return -1
 ```
+```python
+# Test case 1: Simple path with obstacles
+warehouse1 = [
+    [0, 1, 0, 0],
+    [0, 1, 0, 1],
+    [0, 0, 0, 1],
+    [1, 0, 0, 0]
+]
 
+# Test case 2: Path requiring breaking obstacles
+warehouse2 = [
+    [0, 1, 1],
+    [0, 1, 0],
+    [0, 0, 0]
+]
+
+# Test case 3: No possible path
+warehouse3 = [
+    [0, 1, 1],
+    [1, 1, 1],
+    [1, 1, 0]
+]
+
+# Test your function
+print(find_shortest_path(warehouse1, 2))  # Should find a path
+print(find_shortest_path(warehouse2, 2))  # Should find a path breaking 1-2 obstacles
+print(find_shortest_path(warehouse3, 2))  # Should return -1 (no path possible)
+```
 ---
 
 ## Question 4 (Hard - Matrix Simulation)
